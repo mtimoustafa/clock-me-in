@@ -39,3 +39,22 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Even more gitignore
+*.swp
+.Gemfile
+.byebug_history
+.ruby-version
+/*/doc/
+/*/test/tmp/
+/.bundle
+/dist/
+/doc/
+/guides/output/
+debug.log
+node_modules/
+package-lock.json
+pkg/
+/tmp/
+/yarn-error.log
+/test-reports/

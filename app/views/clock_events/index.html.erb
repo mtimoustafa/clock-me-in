@@ -3,7 +3,7 @@
 <%= render 'error' %>
 
 <h2>Clock in / out</h2>
-<%= render 'form' %>
+<%= render partial: 'form', locals: { model: ClockEvent.new } %>
 
 <h2>Events</h2>
 <% if @clock_events.present? %>

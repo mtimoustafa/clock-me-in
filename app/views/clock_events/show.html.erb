@@ -2,5 +2,5 @@
 
 <%= render 'error' %>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { model: @clock_event } %>
 <%= link_to 'Cancel', clock_events_index_url %>

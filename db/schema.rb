@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(version: 2020_10_05_211213) do
 
   create_table "clock_events", force: :cascade do |t|
+    t.string "name"
+    t.string "clock_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

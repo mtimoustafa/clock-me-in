@@ -1,0 +1,13 @@
+<h1>Clock in!</h1>
+
+<%= form_with scope: :clock_event, local: true do |form| %>
+  <fieldset>
+    <legend>Ready for a change?</legend>
+
+    <%= radio_button :clock_event, :clock_type, 'in' %>
+    <%= label :clock_event, :clock_type, 'Clock in', value: 'in' %>
+
+    <%= radio_button :clock_event, :clock_type, 'out' %>
+    <%= label :clock_event, :clock_type, 'Clock out', value: 'out' %>
+  </fieldset>
+<% end %>

@@ -1,0 +1,19 @@
+<%= form_with model: ClockEvent.new, scope: :clock_event, local: true, class: 'form' do |form| %>
+  <div>
+    <%= label :clock_event, :name, 'Name' %>
+    <%= text_field :clock_event, :name %>
+  </div>
+
+  <fieldset>
+    <legend>Where are you going?</legend>
+
+    <%= radio_button :clock_event, :clock_type, 'in' %>
+    <%= label :clock_event, :clock_type, 'Clock in', value: 'in' %>
+
+    <%= radio_button :clock_event, :clock_type, 'out' %>
+    <%= label :clock_event, :clock_type, 'Clock out', value: 'out' %>
+
+  </fieldset>
+
+  <%= form.submit 'Save' %>
+<% end %>

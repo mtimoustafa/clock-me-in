@@ -2,21 +2,5 @@
 
 <%= render 'error' %>
 
-<%= form_with model: @clock_event, scope: :clock_event, local: true do |form| %>
-  <%= label :clock_event, :name, 'Name' %>
-  <%= text_field :clock_event, :name %>
-
-  <fieldset>
-    <legend>Where are you going?</legend>
-
-    <%= radio_button :clock_event, :clock_type, 'in' %>
-    <%= label :clock_event, :clock_type, 'Clock in', value: 'in' %>
-
-    <%= radio_button :clock_event, :clock_type, 'out' %>
-    <%= label :clock_event, :clock_type, 'Clock out', value: 'out' %>
-
-  </fieldset>
-
-  <%= form.submit 'Save' %>
-  <%= link_to 'Cancel', clock_events_index_url %>
-<% end %>
+<%= render 'form' %>
+<%= link_to 'Cancel', clock_events_index_url %>

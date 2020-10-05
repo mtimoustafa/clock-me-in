@@ -1,34 +1,21 @@
-<h1>ClockMeIn!</h1>
+<h1>ClockMeIn</h1>
 
 <%= render 'error' %>
 
-<%= form_with model: ClockEvent.new, scope: :clock_event, local: true do |form| %>
-  <h2>Clock in / out</h2>
-  <%= label :clock_event, :name, 'Name' %>
-  <%= text_field :clock_event, :name %>
+<h2>Clock in / out</h2>
+<%= render 'form' %>
 
-  <fieldset>
-    <legend>Where are you going?</legend>
-
-    <%= radio_button :clock_event, :clock_type, 'in' %>
-    <%= label :clock_event, :clock_type, 'Clock in', value: 'in' %>
-
-    <%= radio_button :clock_event, :clock_type, 'out' %>
-    <%= label :clock_event, :clock_type, 'Clock out', value: 'out' %>
-
-  </fieldset>
-
-  <%= form.submit 'Save' %>
-<% end %>
-
+<h2>Events</h2>
 <% if @clock_events.present? %>
   <% @clock_events.each do |clock| %>
     <% time = clock.updated_at.localtime.strftime("%I:%M%P") %>
     <% date = clock.updated_at.localtime.strftime("%B %e, %Y") %>
+
     <div class="clock-event">
       <span><%= clock.name %> clocked <%= clock.clock_type %> at <%= time %> on <%= date %>.</span>
+
       <%= link_to 'Edit', clock_event_path(clock) %>
-      <%= link_to 'Delete', clock_event_path(clock), method: :delete, data: { confirm: 'Are you sure you want to delete this entry?' } %>
+      <%= link_to 'Delete', clock_event_path(clock), method: :delete, data: { confirm: 'Are you sure you want to delete this event?' } %>
     </div>
   <% end %>
 <% end %>
